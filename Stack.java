@@ -51,6 +51,29 @@ public class Stack
         }
     }
     
+    public static Stack peak(Stack list)
+    {
+    	if(list.head!=null)
+    	{
+    		System.out.println("Stack top "+head.data);
+    	}
+    	else
+    		System.out.println("List empty");
+    	return list;
+    }
+    
+    public static Stack pop(Stack list)
+    {
+    	if(list.head!=null)
+    	{
+    		Node deleteNode=list.head;
+        	head=deleteNode.next;
+    	}
+    	else
+    		System.out.println("List empty");
+    	return list;
+    }
+    
     public static void main(String[] args)
     {
         /* Start with the empty list. */
@@ -62,6 +85,12 @@ public class Stack
         list = insert(list,56);
    
         // Print the LinkedList
+        printList(list);
+        System.out.println("Peak of stack");
+        list.peak(list);
+        printList(list);
+        list.pop(list);
+        System.out.println("\nAfter popping node from node");
         printList(list);
     }
 }
