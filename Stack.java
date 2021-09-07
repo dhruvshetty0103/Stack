@@ -29,7 +29,6 @@ public class Stack
         else 
         {
         	//Adding the new node at the beginning according to use case 2
-        	Node temp=head;
         	newNode.next = head;
             head=newNode;
         }
