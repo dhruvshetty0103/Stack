@@ -36,12 +36,25 @@ public class Queue<K>
         // Return the list by head
         return list;
     }
-   
+    
+    public static Queue dequeue(Queue list)
+    {
+    	if(list.head!=null)
+    	{
+    		Node deleteNode=list.head;
+    		System.out.println("\nDequeued node from the queue:"+deleteNode.data);
+        	head=deleteNode.next;
+    	}
+    	else
+    		System.out.println("List empty");
+    	return list;
+    }
+    
     // Method to print the LinkedList.
     public static void printList(Queue list)
     {
         Node currNode = list.head;
-        System.out.print("LinkedList: ");
+        System.out.print("Queue: ");
     
         // Traverse through the LinkedList
         while (currNode != null) 
@@ -63,6 +76,8 @@ public class Queue<K>
         list = insert(list,70);
    
         // Print the LinkedList
+        printList(list);
+        dequeue(list);
         printList(list);
     }
 }
